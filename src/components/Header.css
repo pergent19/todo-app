@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .plus-icon {
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon-todo {
+    width: 50px;
+    height: 50px;
+  }

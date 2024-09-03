@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+/* General body styling */
+body {
+  font-family: 'Adobe Clean', sans-serif;
+  background-color: #fff; /* Slightly lighter background color for contrast */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-contaniner {
+  padding: 10px 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* App container styling */
+.app {
+  padding: 20px 10px; /* Adjusted padding for smaller screens */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header styling */
+h1 {
+  margin-bottom: 20px;
+  color: #69665C;
+  font-size: 28px; /* Adjust font size for different screen sizes */
+  font-weight: bold;
+}
+
+/* Main container styling */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Stack items vertically on small screens */
+  gap: 20px; /* Adjusted gap */
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Horizontal layout on medium and larger screens */
+    justify-content: flex-start;
+    gap: 100px; /* Larger gap on medium screens */
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+@media (max-width: 768px) {
+  .app-contaniner {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .app {
+    padding: 20px; /* Increased padding for better readability */
+  }
+
+  h1 {
+    font-size: 24px; /* Adjusted font size */
+  }
+
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Reduced gap */
   }
 }

@@ -1,0 +1,108 @@
+/* Input form styling */
+
+.todo-input label{
+    color: #69665C;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  
+  .todo-input input, .todo-input textarea{
+    letter-spacing: 2px;
+    margin-top: 10px;
+    width: 95%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 0.5px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.2s ease;
+  }
+  
+  .todo-input button {
+    background-color: #69665C;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+
+  .tags-container {
+    display: flex;
+    justify-content: flex-start; /* Ensures horizontal alignment */
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  
+
+  .tag-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .tag-item.selected  {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .tag-label {
+    cursor: pointer;
+  }
+
+  .cancel-btn {
+    color: #69665C;
+    padding: 10px 0px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .modal-input:focus {
+    border-color: #69665C;
+    outline: none;
+    background-color: #fff;
+  }
+
+  /* Media query for small screens */
+@media (max-width: 768px) {
+  .modal-actions {
+      gap: 10px;
+  }
+
+  .cancel-btn, .add-btn {
+      width: 100%;
+      text-align: center;
+  }
+
+  .todo-input input, .todo-input textarea{
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+
+  .tags-container {
+    flex-direction: column;
+    overflow: hidden; /* Avoid horizontal scroll */
+  }
+
+}

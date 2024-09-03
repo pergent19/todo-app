@@ -1,0 +1,67 @@
+/* Container styling */
+.task-list-container {
+  font-family: 'Adobe Clean', sans-serif;
+}
+
+/* Default styling for larger screens */
+.task-list {
+  list-style: none;
+  padding: 0;
+  color: #69665C;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex; /* Align items horizontally by default */
+  flex-direction: column; /* Stack items vertically on larger screens */
+  gap: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space between items */
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Styling for hide completed tasks container */
+.hide-completed {
+  margin-top: 30px;
+  display: flex; /* Ensure container is flex */
+  align-items: center;
+}
+
+.hide-completed span {
+  color: #69665C;
+  margin-left: 10px; /* Space between checkbox and text */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .task-list {
+      flex-direction: row; /* Align items horizontally on smaller screens */
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      font-size: 15px;
+      gap: 0;
+      justify-content: center;
+  }
+
+  .task-item {
+      margin-bottom: 0; /* Remove bottom margin */
+      margin-right: 6px; /* Add space between items horizontally */
+  }
+
+  .hide-completed {
+      display: none;
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+}

@@ -1,0 +1,152 @@
+/* List styling */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Individual todo card styling */
+.todo-list li {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #FFF9DE;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 200px; /* Fixed height */
+  width: 300px; /* Fixed width */
+}
+
+.todo-content {
+  flex-grow: 1;
+  cursor: pointer;
+  overflow: hidden; /* Ensure text doesn't overflow */
+}
+
+.todo-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #69665C
+}
+
+.todo-description {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #B2AFA1;
+  overflow: auto; /* Add scrollbars if content overflows */
+  height: 100px; /* Set a max height for the description */
+}
+
+/* Custom scrollbar track */
+.todo-description::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Custom scrollbar thumb */
+.todo-description::-webkit-scrollbar-thumb {
+  background-color: #69665C; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Custom scrollbar thumb on hover */
+.todo-description::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Color on hover */
+}
+
+/* Custom scrollbar track (for visible area) */
+.todo-description::-webkit-scrollbar-track {
+  background-color: #F5F5F5; /* Color of the track */
+  border-radius: 4px; /* Rounded corners */
+}
+
+
+.completed{
+  text-decoration: line-through; /* Adds the strike-through line */
+  color: #888; /* Optional: change color to indicate completed status */
+} 
+
+.todo-tags {
+  display: flex;
+}
+
+.tag-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.no-tasks {
+  color: #999;
+  font-size: 24px;
+}
+
+.todo-tags-checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+
+}
+
+.done-text {
+  font-size: 13px;
+  color: #69665C;
+  font-weight: bold;
+  
+}
+
+.completion-checkbox {
+  accent-color: #69665C;
+  margin-left: 5px;
+  appearance: none;
+  width: 15px; /* Set the width of the checkbox */
+  height: 15px; /* Set the height of the checkbox */
+  border: 1px solid #69665C; /* Border color for the checkbox */
+  border-radius: 3px; /* Optional: adjust border radius */
+  background-color: transparent; /* No background color */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* Positioning for the checkmark */
+}
+
+/* Style the checkbox when checked */
+.completion-checkbox:checked::before {
+content: ''; /* Empty content for the checkmark */
+position: absolute;
+left: 3px; /* Adjust horizontal position */
+top: 1px; /* Adjust vertical position */
+width: 3px; /* Width of the checkmark */
+height: 6px; /* Height of the checkmark */
+border: solid #69665C; /* Color of the checkmark */
+border-width: 0 3px 3px 0;
+transform: rotate(45deg); /* Rotate to form checkmark */
+}
+
+.completion-checkbox:focus {
+outline: none; /* Remove default focus outline */
+box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); /* Optional: add a focus shadow */
+}
+
+.done-checkbox-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+    .todo-list {
+      justify-content: center;
+    }
+
+    .no-tasks {
+      text-align: center;
+      font-size: 36px;
+    }
+  
+  }

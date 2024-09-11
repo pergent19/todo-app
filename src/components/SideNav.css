@@ -19,6 +19,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px; /* Space between items */
+  transition: background-color 0.3s, border 0.3s; /* Smooth transition for active state */
+  padding: 10px;
+}
+
+.active {
+  background-color: #FFF9DE;
+  border-radius: 20px;
 }
 
 .circle {
@@ -38,6 +45,37 @@
 .hide-completed span {
   color: #69665C;
   margin-left: 10px; /* Space between checkbox and text */
+}
+
+.completion-checkbox {
+  accent-color: #69665C;
+  margin-left: 5px;
+  appearance: none;
+  width: 15px; /* Set the width of the checkbox */
+  height: 15px; /* Set the height of the checkbox */
+  border: 1px solid #69665C; /* Border color for the checkbox */
+  border-radius: 3px; /* Optional: adjust border radius */
+  background-color: transparent; /* No background color */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* Positioning for the checkmark */
+}
+
+/* Style the checkbox when checked */
+.completion-checkbox:checked::before {
+content: ''; /* Empty content for the checkmark */
+position: absolute;
+left: 3px; /* Adjust horizontal position */
+top: 1px; /* Adjust vertical position */
+width: 3px; /* Width of the checkmark */
+height: 6px; /* Height of the checkmark */
+border: solid #69665C; /* Color of the checkmark */
+border-width: 0 3px 3px 0;
+transform: rotate(45deg); /* Rotate to form checkmark */
+}
+
+.completion-checkbox:focus {
+outline: none; /* Remove default focus outline */
+box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); /* Optional: add a focus shadow */
 }
 
 /* Media query for smaller screens */

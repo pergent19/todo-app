@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../features/todoSlice';
+import { toggleTodo } from '../features/todoSlice';
 import './TodoList.css';
 
 const tags = [
@@ -10,7 +10,7 @@ const tags = [
   { id: 'family', label: 'Family', color: '#DAF2D6' }
 ];
 
-const TodoList = () => {
+const TodoList = ({ selectedTag, hideCompleted  }) => {
   const todos = useSelector(state => state.todos.todos);
   const dispatch = useDispatch();
 
@@ -19,13 +19,18 @@ const TodoList = () => {
     return tag ? tag.color : '#ccc'; // default color if no match found
   };
 
+  const filteredTodos = todos
+  .filter(todo => !hideCompleted || !todo.completed) // Hide completed tasks if checkbox is checked
+  .filter(todo => !selectedTag || todo.tags.includes(selectedTag)); // Filter by selected tag
+
+
   return (
     <>
-      {todos.length === 0 ? (
+      {filteredTodos.length === 0 ? (
         <h1 className="no-tasks">No tasks available</h1>
       ) : (
         <ul className="todo-list">
-          {todos.map(todo => (
+          {filteredTodos.map(todo => (
             <li key={todo.id}>
               <div className="todo-content">
                 <h3 className={`todo-title ${todo.completed ? 'completed' : ''}`}>{todo.title}</h3>
